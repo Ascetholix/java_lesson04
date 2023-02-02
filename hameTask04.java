@@ -54,21 +54,13 @@ public class hameTask04 {
             for (int i = 0; i < age.size(); i++) {
                  id[i] = i;
             }
-            int [] arrTemp = new int[age.size()]; // временый массив для работы с возрастом
-            for (int i = 0; i < age.size(); i++) {
-                arrTemp[i] = age.get(i);
-            }
 
             // Сортировка пузырком
             boolean isSorted = false;     // переменая для ослеживание проходов
             while (!isSorted) {            // пока массив не отсортирован
                 isSorted = true;
                 for (int i = 1; i < id.length; i++) {
-                    if (arrTemp[i] < arrTemp[i - 1]) {
-
-                        int tmp1 = arrTemp[i];
-                        arrTemp[i] = arrTemp[i - 1];
-                        arrTemp[i - 1] = tmp1;
+                    if (age.get(id[i]) < age.get(id[i-1])) {
 
                         int tmp2 = id[i];     // переставляем id
                         id[i] = id[i - 1];
